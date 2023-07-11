@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ms-car-db
+    username: postgres
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_files: false
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+  jackson:
+    default-property-inclusion: NON_NULL
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml

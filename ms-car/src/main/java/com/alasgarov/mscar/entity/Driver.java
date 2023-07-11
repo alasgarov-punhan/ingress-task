@@ -2,6 +2,10 @@ package com.alasgarov.mscar.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDateTime;
 
 import static jakarta.persistence.FetchType.LAZY;
 
@@ -26,5 +30,10 @@ public class Driver {
     @MapsId
     @JoinColumn(name = "id")
     private Car car;
+
+    @CreationTimestamp
+    private LocalDateTime createdDate;
+    @UpdateTimestamp
+    private LocalDateTime updateDate;
 
 }

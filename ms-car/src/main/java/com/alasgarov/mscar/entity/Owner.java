@@ -2,7 +2,10 @@ package com.alasgarov.mscar.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static jakarta.persistence.CascadeType.ALL;
@@ -23,6 +26,11 @@ public class Owner {
 
     @OneToMany(mappedBy = "owner", cascade = ALL)
     private List<Car> cars;
+
+    @CreationTimestamp
+    private LocalDateTime createdDate;
+    @UpdateTimestamp
+    private LocalDateTime updateDate;
 
 
 
