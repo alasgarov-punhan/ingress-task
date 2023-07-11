@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create post table
+      author: Punhan Alasgarov
+      changes:
+        - createTable:
+            tableName: post
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(256)
+                  remarks: title of post
+                  constraints:
+                    nullable: false
+              - column:
+                  name: body
+                  type: varchar(256)
+                  remarks: body of title
+              - column:
+                  name: user_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_date
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: When the record created
+              - column:
+                  name: update_date
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: Last update of record
+
+            remarks: Table to store information about posts
