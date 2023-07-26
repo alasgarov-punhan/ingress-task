@@ -5,14 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CarDto {
-    private Long id;
+public class CarRepairCenterDto {
     private String name;
-    private LocalDateTime updateDate;
+
 }

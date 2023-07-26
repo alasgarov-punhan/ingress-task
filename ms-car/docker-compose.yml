@@ -3,9 +3,9 @@ version: '3.8'
 services:
   db:
     image: postgres:alpine
-    container_name: liquibase-migration
+    container_name: ms-car
     ports:
-      - "5959:5432"
+      - "5432:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password

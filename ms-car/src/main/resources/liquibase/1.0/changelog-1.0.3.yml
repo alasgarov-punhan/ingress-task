@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create owner_car table
+      author: Punhan Alasgarov
+      changes:
+        - createTable:
+            tableName: owner_car
+            columns:
+              - column:
+                  name: owner_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_owner_car_to_owner
+                    references: owners(id)
+              - column:
+                  name: car_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_owner_car_to_car
+                    references: cars(id)
+
+
+            remarks: Table to store information about drivers

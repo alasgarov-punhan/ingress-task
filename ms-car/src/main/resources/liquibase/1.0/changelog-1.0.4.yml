@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create driver table
+      author: Punhan Alasgarov
+      changes:
+        - createTable:
+            tableName: car_repairs_center
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(256)
+                  constraints:
+                    nullable: false
+
+            remarks: Table to store information about drivers

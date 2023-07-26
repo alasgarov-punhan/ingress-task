@@ -32,12 +32,12 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   remarks: Last update of record
-              - column:
-                  name: owner_id
-                  type: bigint
-                  constraints:
-                    foreignKeyName: fk_owners_to_cars
-                    references: cars(id)
-                    nullable: true
+#              - column:
+#                  name: owner_id
+#                  type: bigint
+#                  constraints:
+#                    foreignKeyName: fk_owners_to_cars
+#                    references: cars(id)
+#                    nullable: true
 
             remarks: Table to store information about owners

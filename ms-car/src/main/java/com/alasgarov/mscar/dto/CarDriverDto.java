@@ -11,8 +11,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CarDto {
+public class CarDriverDto {
     private Long id;
     private String name;
-    private LocalDateTime updateDate;
+    private int experience;
+    private LocalDateTime createdDate;
 }
