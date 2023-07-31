@@ -2,6 +2,7 @@ package com.alasgarov.simplerestapi.controller;
 
 import com.alasgarov.simplerestapi.dto.CreatePostRequest;
 import com.alasgarov.simplerestapi.dto.PostDto;
+import com.alasgarov.simplerestapi.dto.UpdatePostRequest;
 import com.alasgarov.simplerestapi.service.PostService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -26,9 +27,21 @@ public class PostController {
         return postService.createPost(request);
     }
 
+    @PatchMapping("/{id}")
+    void updatePostPartially(@PathVariable Long id, @RequestParam String title){
+        postService.updatePostTitle(id, title);
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deletePostById(@PathVariable Long id){
         postService.deletePost(id);
     }
+
+    @PutMapping("/{id}/updatePost")
+    void updatePost(@PathVariable Long id, @RequestBody UpdatePostRequest request){
+        postService.updatePost(id, request);
+    }
+
+
 }

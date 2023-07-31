@@ -2,6 +2,7 @@ package com.alasgarov.simplerestapi.service;
 
 import com.alasgarov.simplerestapi.dto.CreatePostRequest;
 import com.alasgarov.simplerestapi.dto.PostDto;
+import com.alasgarov.simplerestapi.dto.UpdatePostRequest;
 import com.alasgarov.simplerestapi.dto.converter.PostDtoConverter;
 import com.alasgarov.simplerestapi.model.Post;
 import com.alasgarov.simplerestapi.repository.PostRepository;
@@ -36,6 +37,19 @@ public class PostService {
     public void deletePost(Long id){
         Post post = findBydId(id);
         postRepository.delete(post);
+    }
+
+    public void updatePost(Long id, UpdatePostRequest request){
+        Post post = findBydId(id);
+        post.setTitle(request.getTitle());
+        post.setBody(request.getBody());
+        postRepository.delete(post);
+    }
+
+    public void updatePostTitle(Long id, String title){
+        Post post = findBydId(id);
+        post.setTitle(title);
+        postRepository.save(post);
     }
 
     private Post findBydId(Long id){
